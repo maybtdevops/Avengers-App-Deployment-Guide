@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Avengers</title>
+</head>
+<body>
+  <h1>Avengers List</h1>
+  <ul id="avengers-list"></ul>
+
+  <script>
+    fetch('/avengers')
+      .then(response => response.json())
+      .then(data => {
+        const list = document.getElementById('avengers-list');
+        data.forEach(avenger => {
+          const li = document.createElement('li');
+          li.textContent = `${avenger.name} - ${avenger.power}`;
+          list.appendChild(li);
+        });
+      });
+  </script>
+</body>
+</html>
