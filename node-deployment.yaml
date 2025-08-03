@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: avengers-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: avengers-backend
+  template:
+    metadata:
+      labels:
+        app: avengers-backend
+    spec:
+      containers:
+        - name: backend
+          image: your-dockerhub/avengers-backend:1.0
+          ports:
+            - containerPort: 3000
+          env:
+            - name: DB_HOST
+              value: mysql
+            - name: DB_USER
+              value: root
+            - name: DB_PASSWORD
+              value: rootpassword
+            - name: DB_NAME
+              value: avengersdb
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: avengers-backend
+spec:
+  selector:
+    app: avengers-backend
+  ports:
+    - port: 3000
+      targetPort: 3000
+  type: LoadBalancer
