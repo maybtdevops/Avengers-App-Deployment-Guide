@@ -108,12 +108,25 @@ db.connect(err => {
   console.log('Connected to MySQL');
 });
 
+// Get Avengers
 app.get('/avengers', (req, res) => {
   db.query('SELECT * FROM avengers', (err, results) => {
     if (err) return res.status(500).send(err);
     res.json(results);
   });
 });
+
+// Add Avenger
+app.post('/avengers', (req, res) => {
+  const { name, power } = req.body;
+  db.query('INSERT INTO avengers (name, power) VALUES (?, ?)', [name, power], (err) => {
+    if (err) return res.status(500).send(err);
+    res.send('Avenger added');
+  });
+});
+
+
+//delete
 
 app.listen(port, () => console.log(`Server running at http://localhost:${port}`));
 ```
