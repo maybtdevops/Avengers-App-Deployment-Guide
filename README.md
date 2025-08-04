@@ -65,11 +65,8 @@ FLUSH PRIVILEGES;
 2.2 Node.js App Setup
 Project structure:
 
-avengers-app/
-|--- public/
-│   |---- index.html
-|--- server.js
-│----package.json
+<img width="400" height="297" alt="image" src="https://github.com/user-attachments/assets/e0b63e9b-03a5-4c9a-85fb-aacd6ba6fc91" />
+
 
 
 Install dependencies:
