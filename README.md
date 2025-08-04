@@ -66,10 +66,10 @@ FLUSH PRIVILEGES;
 Project structure:
 
 avengers-app/
-│── public/
-│   └── index.html
-│── server.js
-│── package.json
+|--- public/
+│   |---- index.html
+|--- server.js
+│----package.json
 
 
 Install dependencies:
