@@ -145,7 +145,7 @@ public/index.html:
 </head>
 <body>
   <h1>Avengers Assemble!</h1>
-  <img src="https://media.giphy.com/media/xT0xeJpnrWC4XWblEk/giphy.gif" alt="Avengers GIF">
+  <img src="https://media1.tenor.com/m/7uC8ZloMvgcAAAAd/rdj-doctor-doom.gif" alt="Avengers GIF">
   <h2>Team Members</h2>
   <ul id="avengers-list"></ul>
   <script>
